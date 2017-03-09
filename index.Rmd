@@ -1,0 +1,23 @@
+---
+title: The Places I've Lived
+author: Joseph Rodriguez
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(leaflet)
+```
+
+## The date: `r format(Sys.time(), "%B %d, %Y")`
+
+```{r}
+df <- data.frame(lat = c(39.7683765,  38.8303905, 44.0247062, 37.2295733, 38.848724), lng = c( -86.1580423,  -77.1963703, -88.5426136, -80.4139393, -76.92386250))
+
+df %>%
+leaflet() %>%
+addTiles() %>%
+addMarkers(, popup = c("Indy 2000 - Present", "Annandale 1975 - 1982", "Oshkosh 1990 - 2000", "Blacksburg 1982 - 1989", "Suitland 1964 - 1975"))
+```
+NOTE: Since this is for a class I'm displaying the code.
